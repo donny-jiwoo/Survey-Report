@@ -1,4 +1,4 @@
-name: Render and Publish
+name: Render and Deploy
 
 on:
   push:
@@ -21,12 +21,16 @@ jobs:
 
       - name: Install R packages
         run: |
-          install.packages(c("readxl", "dplyr", "ggplot2", "knitr", "kableExtra", "forcats", "tidyverse"))
+          install.packages(c("readxl", "dplyr", "ggplot2", "knitr", "kableExtra", "forcats", "tidyverse", "showtext"))
         shell: Rscript {0}
 
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true
