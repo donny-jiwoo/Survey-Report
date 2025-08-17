@@ -54,10 +54,10 @@ library(readxl)
 library(forcats)  
 library(showtext)
 
-font_add(family = "malgun", regular = "C:/Windows/Fonts/malgun.ttf") # 경로 확인 필요
+font_add_google("Noto Sans KR", "noto")  # 구글 폰트 사용
 showtext_auto()  # ggplot, plot에 자동 
 
-raw_data <- read_excel("C:/OneDrive/바탕 화면/연구용역 및 데이터 분석/dat.xlsx")
+raw_data <- read_excel("dat.xlsx")
 dat <-raw_data 
 dat <- dat %>% mutate(across(starts_with("ques_"), as.character))
 
@@ -137,3 +137,4 @@ ggplot(ques1_freq, aes(x = fct_reorder(응답기관, -n), y = n, fill = 응답�
 
 ```{r}
 ```
+
