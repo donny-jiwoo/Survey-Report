@@ -1,22 +1,19 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 
-website:
-  title: "학생맞춤통합지원 체계 운영실태 조사"
-  navbar:
-    left:
-      - href: index.qmd
-        text: "홈"
-      - href: Report_Int.qmd
-        text: "분석보고서"
+book:
+  title: "학생맞춤통합지원 체계 운영실태 조사 분석보고서"
+  author: "학생맞춤지원담당관 지역협력복지팀(a.k.a. Donny)"
+  chapters:
+    - index.qmd
 
 format:
   html:
-    theme: flatly
+    theme: cosmo
     toc: true
-    toc-location: left
-    toc-title: "목차"
     number-sections: true
-    code-fold: true
-    code-summary: "코드 보기"
+    code-fold: show
+
+execute:
+  freeze: auto
