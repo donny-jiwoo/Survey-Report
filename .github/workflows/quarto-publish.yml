@@ -2,7 +2,17 @@ name: Quarto Publish
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+
+# ← github-actions[bot]이 gh-pages 브랜치에 쓸 수 있게 권한을 줍니다
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
@@ -10,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -17,15 +29,20 @@ jobs:
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install R packages
-        shell: bash
+      # (옵션) 일부 패키지가 시스템 라이브러리를 요구할 때 도움 됩니다
+      - name: Install system deps
         run: |
-          Rscript -e 'pkgs <- c("rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats");           inst <- rownames(installed.packages());           to_install <- setdiff(pkgs, inst);           if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'pkgs <- c("rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats"); inst <- rownames(installed.packages()); to_install <- setdiff(pkgs, inst); if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
-      - name: Publish to gh-pages
+      - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
