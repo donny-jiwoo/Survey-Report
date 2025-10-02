@@ -312,7 +312,7 @@ axis.title.x = element_text(size = 20, angle = 0, margin = margin(t = 15)),  # t
 axis.title.y = element_text(size = 20, angle = 0, vjust = 0.5),  # size 20 추가
     legend.position = "none"
   ) +
-  xlim(0, max(ques3_freq$n) * 1.15)
+  xlim(0, max(ques3_freq$n) * 1.30)
 ```
 
 ### 문항4. 귀하의 소속기관은 교육부 학생맞춤통합지원 선도학교입니까?
@@ -1323,7 +1323,7 @@ ggplot(summary_q10, aes(x = reorder(응답10, -n), y = n, fill = 응답10)) +
   theme(
     plot.title = element_text(face="bold", size=32, hjust=0.5),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, vjust=0.8, size = 18),
+    axis.text.x = element_text(angle=0, vjust=0.8, size = 23),
     strip.text = element_text(face="bold", size=18),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size =18)  # y축 제목 가로 표시
   ) +
@@ -1370,7 +1370,7 @@ print(summary_q11, n = Inf)
 ggplot(summary_q11 %>% filter(응답11 != "합계") , aes(x = reorder(응답11, -n), y = n, fill = 응답11)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)")), 
-            vjust=-0.5, size=4.5, fontface="bold") +
+            vjust=-0.5, size= 7, fontface="bold", lineheight =0.5) +
   labs(
     title = "학생맞춤통합지원 홍보의 충분성",
     x = "응답항목",
@@ -1380,10 +1380,10 @@ ggplot(summary_q11 %>% filter(응답11 != "합계") , aes(x = reorder(응답11, 
   theme(
     plot.title = element_text(face="bold", size=24, hjust=0.5, margin = margin(b = 18)),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=13, lineheight=0.8),
-    axis.text.y = element_text(size=13),
-    axis.title.x = element_text(size=15, margin = margin(t = 12)),
-    axis.title.y = element_text(angle = 0, vjust = 0.5, size=15),
+    axis.text.x = element_text(angle=0, hjust=0.5, size=16, lineheight=0.8),
+    axis.text.y = element_text(size=15),
+    axis.title.x = element_text(size=20, margin = margin(t = 12)),
+    axis.title.y = element_text(angle = 0, vjust = 0.5, size=18),
     strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.2, "lines"),  # 패널 간격 조금 증가
     plot.margin = margin(18, 18, 18, 18)
