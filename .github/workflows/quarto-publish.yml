@@ -38,16 +38,8 @@ jobs:
             libharfbuzz-dev libfribidi-dev
 
       # ⬇️ 여기서 필요한 R 패키지를 설치합니다 (부족하면 더 추가해도 됩니다)
-      - name: Install R packages
-        run: |
-          Rscript -e 'pkgs <- c(
-            "rmarkdown","knitr","tidyverse","dplyr","ggplot2",
-            "readxl","janitor","stringr","tidyr","forcats",
-            "kableExtra","DT","gt","showtext","scales",
-            "RColorBrewer","gridExtra","cluster","factoextra"
-          ); inst <- rownames(installed.packages());
-          to_install <- setdiff(pkgs, inst);
-          if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
+   - name: Install R packages
+        run: Rscript install_packages.R
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
