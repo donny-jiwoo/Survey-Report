@@ -1,7 +1,4 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-
-/.quarto/
-**/*.quarto_ipynb
+docs/
+_freeze/
+*_files/
+*.html
