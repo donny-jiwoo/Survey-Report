@@ -1977,11 +1977,11 @@ ggplot(summary_q12 %>% filter(문항12 != "합계"), aes(x = 문항12, y = n, fi
   theme(
     plot.title = element_text(face="bold", size=24, hjust=0.5, margin = margin(b = 18)),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=13, lineheight=0.8),
+    axis.text.x = element_text(angle=0, hjust=0.5, size=15, lineheight=0.5),
     axis.text.y = element_text(size=13),
     axis.title.x = element_text(size=15, margin = margin(t = 12)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=15),
-    strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
+    strip.text = element_text(face="bold", size=18, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.2, "lines"),  # 패널 간격 조금 증가
     plot.margin = margin(18, 18, 18, 18)
   ) +
@@ -2063,7 +2063,7 @@ ggplot(summary_q13, aes(x = 문항13, y = n, fill = 문항13)) +
     axis.text.y = element_text(size=16),
     axis.title.x = element_text(size=18, margin = margin(t = 12)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=18),
-    strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
+    strip.text = element_text(face="bold", size=18, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.2, "lines"),  # 패널 간격 조금 증가
     plot.margin = margin(18, 18, 18, 18)
   ) +
@@ -2136,7 +2136,7 @@ ggplot(summary_q14, aes(x = 문항14, y = n, fill = 문항14)) +
             vjust= -0.25, size=4.5, fontface="bold", lineheight=0.5) +
   facet_wrap(~학교급, ncol = 3, nrow = 2) +  # 2행 3열 배치
   labs(
-    title = "활용하는 기존 위원회\n(학교급별)",
+    title = "활용하는 기존 위원회",
     x = "위원회 유형",
     y = "응답수"
   ) +
@@ -2244,6 +2244,7 @@ ggplot(summary_q15 %>% filter(문항15 != "합계"), aes(x = n, y = reorder(문�
     panel.spacing = unit(1.2, "lines"),
     plot.margin = margin(18, 18, 18, 18)
   ) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.30))) +  # 이 줄 추가
   coord_cartesian(clip = "off")
 ```
 
@@ -2322,7 +2323,7 @@ summary_q16_total <- summary_q16 %>%
 ggplot(summary_q16, aes(x = 문항16, y = n, fill = 문항16)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)")), 
-            vjust=-0.3, size=4.5, fontface="bold", lineheight =0.3) +
+            vjust=-0.3, size=6.5, fontface="bold", lineheight =0.5) +
   facet_wrap(~학교급, ncol = 3, nrow = 2) +  # 2행 3열 배치
   labs(
     title = "학생맞춤통합지원팀\n위원장",
@@ -2338,7 +2339,7 @@ ggplot(summary_q16, aes(x = 문항16, y = n, fill = 문항16)) +
     axis.text.y = element_text(size=18),
     axis.title.x = element_text(size=20, margin = margin(t = 12)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=20),
-    strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
+    strip.text = element_text(face="bold", size=18, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.2, "lines"),  # 패널 간격 조금 증가
     plot.margin = margin(18, 18, 18, 18)
   ) +
@@ -2419,7 +2420,7 @@ ggplot(summary_q17, aes(x = 문항17, y = n, fill = 문항17)) +
   theme(
     plot.title = element_text(face="bold", size=32, hjust=0.5, margin = margin(b = 18), lineheight = 0.5),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=16, lineheight=0.4),  # x축 텍스트 줄간격 더 좁게
+    axis.text.x = element_text(angle=0, hjust=0.5, size=16, lineheight=0.5,margin = margin(b = 10)),  # x축 텍스트 줄간격 더 좁게
     axis.text.y = element_text(size=18),
     axis.title.x = element_text(size=20, margin = margin(t = 18)),  # x축 제목 여백 적절히
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=20),
