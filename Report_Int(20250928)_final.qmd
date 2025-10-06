@@ -595,7 +595,7 @@ ggplot(ques7_freq, aes(x = n, y = reorder(응답, n), fill = 응답)) +
     axis.title.y = element_text(size = 20, angle = 0, vjust = 0.5),
     legend.position = "none"
   ) +
-  xlim(0, max(ques7_freq$n) * 1.15)
+  xlim(0, max(ques7_freq$n) * 1.30)
 ```
 
 ### 문항8. 귀하가 보직교사일 경우 보직의 명칭을 적어주세요. (예: 수업연구부장 등)
@@ -707,7 +707,7 @@ print(ques9_freq %>% select(응답, n, pct), n = Inf)
 ggplot(ques9_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), y = n, fill = 응답)) +
   geom_bar(stat = "identity", width = 0.5) +
   geom_text(aes(label = paste0(n, "명 (", pct, "%)")), 
-            vjust = -0.3, size = 7) +
+            vjust = -0.5, size = 7) +
   labs(
     title = "학생맞춤통합지원 정책인식도",
     x = "정책인식도",
@@ -726,7 +726,7 @@ ggplot(ques9_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), y
   ylim(0, max(ques9_freq$n[ques9_freq$응답 != "합계"]) * 1.15)  # ylim에서도 합계 제외 
 ```
 
-응답자 유형별 분석방법에 관한 항
+분석과정정
 
 1\) 응답자 유형 분류: 직책별(학교장, 교감, 교사 등), 학교급별(초등학교, 중학교, 고등학교), 설립별(공립, 사립)으로 구분하였음. 유형별 비교를 위해 응답자 수가 적은 특수학교, 각종학교 및 공립학교는 조사대상자에서 제외하였음. 이와 같이 응답자 유형을 분류하고 응답자 집단 간의 답변 분포를 비교하였음.
 
@@ -912,10 +912,10 @@ job_summary_with_groups <- job_summary %>%
 # 직책별 박스플롯
 ggplot(dat_filtered, aes(x = 직책, y = 정책인식도점수, fill = 직책)) +
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
-  stat_summary(fun = mean, geom = "point", shape = 23, size = 4, fill = "yellow", stroke = 1) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 6, fill = "yellow", stroke = 1) +
   geom_text(data = job_summary_with_groups, 
             aes(x = 직책, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 7, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 8.5, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 정책인식도",
     x = "직책", 
