@@ -1077,7 +1077,7 @@ ggplot(dat_filtered, aes(x = 학교급, y = 정책인식도점수, fill = 학교
   stat_summary(fun = mean, geom = "point", shape = 23, size = 4, fill = "yellow", stroke = 1) +
   geom_text(data = school_summary_final, 
             aes(x = 학교급, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0, lineheight=0.5) +
   labs(
     title = "학교급별 정책인식도",
     x = "학교급", 
@@ -1234,7 +1234,7 @@ ggplot(dat_found, aes(x = 설립, y = 정책인식도점수, fill = 설립)) +
   geom_text(data = school_summary_final,
             aes(x = 설립, y = y_top_estab,
                 label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0, lineheight=0.5) +
   labs(title = "설립별 정책인식도 비교",
        x = "설립", y = "정책인식도") +
   theme_minimal(base_size = 15) +
@@ -1313,7 +1313,7 @@ print(summary_q10_total, n = Inf)
 ggplot(summary_q10, aes(x = reorder(응답10, -n), y = n, fill = 응답10)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)")), 
-            vjust=-0.25, size= 7)  +
+            vjust=-0.25, size= 8, lineheight=0.5)  +
   labs(
     title = "학생맞춤통합지원 인지 경로",
     x = "응답항목",
@@ -1323,6 +1323,7 @@ ggplot(summary_q10, aes(x = reorder(응답10, -n), y = n, fill = 응답10)) +
   theme(
     plot.title = element_text(face="bold", size=32, hjust=0.5),
     legend.position = "none",
+    axis.title.x = element_text(margin = margin(t = 15), size = 18),
     axis.text.x = element_text(angle=0, vjust=0.8, size = 23),
     strip.text = element_text(face="bold", size=18),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size =18)  # y축 제목 가로 표시
