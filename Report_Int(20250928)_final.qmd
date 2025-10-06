@@ -1371,7 +1371,7 @@ print(summary_q11, n = Inf)
 ggplot(summary_q11 %>% filter(응답11 != "합계") , aes(x = reorder(응답11, -n), y = n, fill = 응답11)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)")), 
-            vjust=-0.5, size= 7, fontface="bold", lineheight =0.5) +
+            vjust=-0.5, size= 9, fontface="bold", lineheight =0.5) +
   labs(
     title = "학생맞춤통합지원 홍보의 충분성",
     x = "응답항목",
@@ -1381,11 +1381,11 @@ ggplot(summary_q11 %>% filter(응답11 != "합계") , aes(x = reorder(응답11, 
   theme(
     plot.title = element_text(face="bold", size=24, hjust=0.5, margin = margin(b = 18)),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=16, lineheight=0.8),
+    axis.text.x = element_text(angle=0, hjust=0.5, size=18, lineheight=0.8),
     axis.text.y = element_text(size=15),
     axis.title.x = element_text(size=20, margin = margin(t = 12)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=18),
-    strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
+    strip.text = element_text(face="bold", size=18, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.2, "lines"),  # 패널 간격 조금 증가
     plot.margin = margin(18, 18, 18, 18)
   ) +
@@ -1566,7 +1566,7 @@ ggplot(dat_filtered, aes(x = factor(직책, levels = c("학교장", "교감", "�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 4, fill = "yellow", stroke = 1) +
   geom_text(data = job_summary_with_groups_11, 
             aes(x = 직책, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 홍보충분성",
     x = "직책", 
@@ -1707,7 +1707,7 @@ ggplot(dat_filtered, aes(x = factor(학교급, levels = c("초등학교", "중�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 8, fill = "yellow", stroke = 1) +
   geom_text(data = school_summary_with_groups_11, 
             aes(x = 학교급, y = 6, label = paste0(group, "\n(M=", 평균, ")"), lineheight = 0.8),
-            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0.2, lineheight =0.3) +
+            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0.2, lineheight =0.5) +
   labs(
     title = "학교급별 홍보 충분성",
     x = "학교급", 
@@ -1862,8 +1862,8 @@ ggplot(dat_found_11, aes(x = 설립, y = 홍보충분성점수, fill = 설립)) 
                fill = "yellow", stroke = 1) +
   geom_text(data = school_summary_final_11,
             aes(x = 설립, y = y_top_estab_11,
-                label = paste0(group, "\n(M=", 평균, ")"), lineheight =0.8),
-            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0) +
+                label = paste0(group, "\n(M=", 평균, ")"), lineheight =0.5),
+            inherit.aes = FALSE, fontface = "bold", size = 9, vjust = 0) +
   labs(title = "설립별 홍보충분성",
        x = "설립", y = "홍보충분성") +
   theme_minimal(base_size = 15) +
