@@ -4900,8 +4900,8 @@ ggplot(dat_score_job_34, aes(x = factor(직책, levels = c("학교장", "교감"
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = job_stats_with_groups_34, 
-            aes(x = 직책, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0) +
+            aes(x = 직책, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 컨설팅 유용성 인식",
     x = "직책", 
@@ -5044,8 +5044,8 @@ ggplot(dat_score_job_34, aes(x = factor(학교급, levels = c("초등학교", "�
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = school_stats_with_groups_34, 
-            aes(x = 학교급, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0) +
+            aes(x = 학교급, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight=0.5) +
   labs(
     title = "학교급별 컨설팅 유용성",
     x = "학교급", 
@@ -5199,8 +5199,8 @@ ggplot(dat_score_found_34, aes(x = 설립, y = 컨설팅도움정도점수, fill
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = found_stats_with_groups_34, 
-            aes(x = 설립, y = 6, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0) +
+            aes(x = 설립, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight=0.5) +
   labs(
     title = "설립별 컨설팅 유용성 인식",
     x = "설립", 
