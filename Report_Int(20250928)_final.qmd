@@ -2408,7 +2408,7 @@ ggplot(summary_q17, aes(x = 문항17, y = n, fill = 문항17)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"),
                 y = n),  # 막대 바로 위에 위치
-            hjust=0.5, vjust=-0.05, size=5, fontface="bold", lineheight=0.4) +  # 줄간격 좁게, vjust로 미세조정
+            hjust=0.5, vjust=-0.05, size=6, fontface="bold", lineheight=0.5) +  # 줄간격 좁게, vjust로 미세조정
   facet_wrap(~학교급, ncol = 2, nrow = 3) +  # 3행 2열 배치
   labs(
     title = "학생맞춤통합지원팀\n구성원",
@@ -2420,7 +2420,7 @@ ggplot(summary_q17, aes(x = 문항17, y = n, fill = 문항17)) +
   theme(
     plot.title = element_text(face="bold", size=32, hjust=0.5, margin = margin(b = 18), lineheight = 0.5),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=16, lineheight=0.5,margin = margin(b = 10)),  # x축 텍스트 줄간격 더 좁게
+    axis.text.x = element_text(angle=0, hjust=0.5, size=18, lineheight=0.5,margin = margin(b = 10)),  # x축 텍스트 줄간격 더 좁게
     axis.text.y = element_text(size=18),
     axis.title.x = element_text(size=20, margin = margin(t = 18)),  # x축 제목 여백 적절히
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=20),
@@ -2513,7 +2513,7 @@ ggplot(
   theme(
     plot.title = element_text(face = "bold", size = 32, hjust = 0.5),
     legend.position = "none",
-    axis.text.x = element_text(angle = 0, vjust = 0.8, lineheight = 0.7, size = 15),  # 중복 제거 및 통합
+    axis.text.x = element_text(angle = 0, vjust = 0.8, lineheight = 0.5, size = 17, margin = margin(t = 18)),  # 중복 제거 및 통합
     axis.text.y = element_text(size = 15),
     strip.text = element_text(face = "bold", size = 20),
     axis.title.x = element_text(size = 20, margin = margin(t = 18)),
