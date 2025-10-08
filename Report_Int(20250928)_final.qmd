@@ -6771,7 +6771,7 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
   geom_col(width = 0.6) +
   geom_text(aes(label = paste0(n, "개교 (", 비율, "%)")), 
             vjust = -0.3, hjust = 0.5,
-            size = 5.5, fontface = "bold", color = "black") +
+            size = 4.5, fontface = "bold", color = "black") +
   facet_wrap(~ 학교급, scales = "free_y", ncol = 3) +
   labs(title = "학교급별 군집 분포",
        x = "군집", 
