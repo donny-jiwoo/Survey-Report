@@ -5776,7 +5776,7 @@ ggplot(dat_score_job_40, aes(x = factor(직책, levels = c("학교장", "교감"
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = job_stats_with_groups_40, 
-            aes(x = 직책, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 직책, y = 10, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 사례지원\n 유용성 인식",
@@ -5917,7 +5917,7 @@ ggplot(dat_score_job_40, aes(x = factor(학교급, levels = c("초등학교", "�
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = school_stats_with_groups_40, 
-            aes(x = 학교급, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 학교급, y = 10, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0, lineheight =0.5) +
   labs(
     title = "학교급별 사례지원\n 유용성 인식",
@@ -6073,7 +6073,7 @@ ggplot(dat_score_found_40, aes(x = 설립, y = 사례지원도움정도점수, f
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = found_stats_with_groups_40, 
-            aes(x = 설립, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 설립, y = 10, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight =0.5) +
   labs(
     title = "설립별 사례지원\n 유용성 인식",
