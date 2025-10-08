@@ -12,7 +12,7 @@ book:
 format:
   html:
     theme: cosmo
-    toc: true
+    toc: false
     number-sections: true
     code-fold: show
 
