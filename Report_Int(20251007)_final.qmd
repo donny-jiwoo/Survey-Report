@@ -13,48 +13,7 @@ format:
     code-fold: true
     code-summary: "코드 보기"
     smooth-scroll: true
-    css: |
-      /* 본문 전체 폰트 */
-      body {
-        font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
-        font-size: 1.05rem;
-        color: #222222;
-        line-height: 1.7;
-      }
-
-      /* 제목 글씨 */
-      h1, h2, h3 {
-        font-family: "Noto Sans KR", sans-serif;
-        font-weight: 700;
-        color: #004c99;
-      }
-
-      /* h1 (가장 큰 제목) */
-      h1 {
-        font-size: 2.2rem;
-        margin-top: 2em;
-        margin-bottom: 0.8em;
-      }
-
-      /* h2 이하 소제목 */
-      h2 { font-size: 1.6rem; color: #007acc; }
-      h3 { font-size: 1.25rem; color: #0099cc; }
-
-      /* 표나 코드 글씨 */
-      pre code, table {
-        font-size: 0.9rem;
-      }
-
-      /* 사이드바 배경색 */
-      .sidebar-navigation {
-        background-color: #f8f9fa;
-      }
-
-      /* 페이지 상단의 제목 블록 가운데 정렬 */
-      .quarto-title-block {
-        text-align: center;
-        margin-bottom: 2em;
-      }
+    css: styles.css
 editor: visual
 ---
 
@@ -6821,3 +6780,4 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
     legend.position = "bottom"
   )
 ```
+
