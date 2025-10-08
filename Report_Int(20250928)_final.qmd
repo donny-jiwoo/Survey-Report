@@ -2850,7 +2850,7 @@ ggplot(
   aes(x = 문항22, y = n, fill = 문항22)
 ) +
   geom_bar(stat = "identity", width = 0.7) +
-  geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
+  geom_text(aes(label = paste0(n,"건(",pct,"%)"), 
                 y = n + max(n) * 0.05),  # 최대값의 5%만큼 위에 위치
             vjust = 0.15, hjust = 0.5, size = 4.5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
