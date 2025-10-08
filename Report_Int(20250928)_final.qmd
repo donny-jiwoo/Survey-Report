@@ -2934,7 +2934,7 @@ ggplot(summary_q23, aes(x = 문항23, y = n, fill = 문항23)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"),
                 y = n),  # 막대 바로 위에 위치
-            hjust=0.5, vjust=-0.2, size=9, fontface="bold", lineheight=0.5) +
+            hjust=0.5, vjust=-0.2, size=7, fontface="bold", lineheight=0.5) +
   facet_wrap(~학교급, ncol = 2, nrow = 3) +  # 3행 2열 배치
   labs(
     title = "학생맞춤통합지원팀\n 지역기관 연계여부",
@@ -2944,13 +2944,13 @@ ggplot(summary_q23, aes(x = 문항23, y = n, fill = 문항23)) +
   scale_x_discrete(labels = c("그렇다", "아니다")) +
   theme_minimal(base_size = 13) +
   theme(
-    plot.title = element_text(face="bold", size=32, hjust=0.5, margin = margin(b = 18), lineheight = 0.9),
+    plot.title = element_text(face="bold", size=32, hjust=0.5, margin = margin(b = 18), lineheight = 0.5),
     legend.position = "none",
     axis.text.x = element_text(angle=0, hjust=0.5, size=18, lineheight=0.6),
     axis.text.y = element_text(size=18),
     axis.title.x = element_text(size=20, margin = margin(t = 18)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=20),
-    strip.text = element_text(face="bold", size=15, margin = margin(t = 6, b = 6)),
+    strip.text = element_text(face="bold", size=18, margin = margin(t = 6, b = 6)),
     panel.spacing = unit(1.5, "lines"),
     plot.margin = margin(20, 20, 20, 20)
   ) +
@@ -3098,7 +3098,7 @@ print(summary_q25_total, n = Inf)
 ggplot(summary_q25 %>% mutate(문항25 = reorder(문항25, -n)), aes(x = 문항25, y = n, fill = 문항25)) +
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"), y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 8, lineheight = 0.4) +
+            vjust = -0.2, hjust = 0.5, size = 6.5, lineheight = 0.5) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(title = "교직원 연수 실시 횟수", x = "연수 횟수", y = "응답수") +
   scale_x_discrete(labels = c("1회", "2회", "3회 이상", "미실시")) +
@@ -3178,7 +3178,7 @@ print(summary_q26_total, n = Inf)
 ggplot(summary_q26 %>% mutate(문항26 = reorder(문항26, -n)), aes(x = 문항26, y = n, fill = 문항26)) +
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 5, lineheight = 0.6) +
+            vjust = -0.2, hjust = 0.5, size = 6.5, lineheight = 0.5) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(title = "교직원 연수 내용", x = "연수 내용", y = "응답수") +
   scale_x_discrete(labels = c("정책이해", "운영절차", "지원사례", "기타")) +
@@ -3250,7 +3250,7 @@ print(summary_q27_total, n = Inf)
 ggplot(summary_q27, aes(x = 문항27, y = n, fill = 문항27)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"), y = n),
-            hjust=0.5, vjust=-0.2, size=6, fontface="bold", lineheight=0.8) +
+            hjust=0.5, vjust=0, size=6, fontface="bold", lineheight=0.5) +
   facet_wrap(~학교급, ncol = 2, nrow = 3) +
   labs(title = "찾아가는 연수 신청 의향\n(학교급별)", x = "신청의향", y = "응답수") +
   scale_x_discrete(labels = c("그렇다", "아니다")) +
@@ -3306,7 +3306,7 @@ print(ques28_freq %>% select(응답, n, pct), n = Inf)
 ggplot(ques28_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), y = n, fill = 응답)) +
   geom_bar(stat = "identity", width = 0.5) +
   geom_text(aes(label = paste0(n, "명 (", pct, "%)")), 
-            vjust = -0.5, size = 9) +
+            vjust = -0.5, size = 7) +
   labs(
     title = "학교 구성원 간 협력중요성 인식",
     x = "협력중요성 인식",
@@ -3480,11 +3480,11 @@ ggplot(dat_score_28, aes(x = factor(직책, levels = c("학교장", "교감", "�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = job_summary_with_groups_28, 
             aes(x = 직책, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 7, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 협력중요성 인식",
     x = "직책", 
-    y = "협력중요성\n점수"
+    y = "협력중요성\n인식도"
   ) +
   theme_minimal(base_size = 15) +
   theme(
@@ -3492,7 +3492,7 @@ ggplot(dat_score_28, aes(x = factor(직책, levels = c("학교장", "교감", "�
     axis.text.x = element_text(size = 18),
     axis.text.y = element_text(size = 18, lineheight = 0.4),
     axis.title.x = element_text(size = 20, margin = margin(t = 15)),
-    axis.title.y = element_text(size = 20, angle = 0, vjust = 0.5),
+    axis.title.y = element_text(size = 20, angle = 0, vjust = 0.5, lineheight=0.5),
     legend.position = "none"
   ) +
   scale_y_continuous(expand = expansion(mult = c(0.05, 0.15)))
@@ -3624,11 +3624,11 @@ ggplot(dat_score_28, aes(x = factor(학교급, levels = c("초등학교", "중�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = school_summary_with_groups_28, 
             aes(x = 학교급, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 7, vjust = 0) +
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight=0.5) +
   labs(
     title = "학교급별 협력중요성 인식",
     x = "학교급", 
-    y = "협력\n중요성"
+    y = "협력중요성\n인식도"
   ) +
   theme_minimal(base_size = 15) +
   theme(
@@ -3834,7 +3834,7 @@ print(ques29_freq %>% select(응답, n, pct), n = Inf)
 ggplot(ques29_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), y = n, fill = 응답)) +
   geom_bar(stat = "identity", width = 0.5) +
   geom_text(aes(label = paste0(n, "명 (", pct, "%)")), 
-            vjust = -0.3, size = 8) +
+            vjust = -0.3, size = 7) +
   labs(
     title = "교육구성원 간\n 협력 원활성",
     x = "협력 원활성",
@@ -3842,7 +3842,7 @@ ggplot(ques29_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), 
   ) +
   theme_minimal(base_size = 12) +
   theme(
-    plot.title = element_text(size = 32, face = "bold", hjust = 0.5),
+    plot.title = element_text(size = 32, face = "bold", hjust = 0.5, lineheight=0.5),
     axis.text.x = element_text(size = 20, face = "bold"),
     axis.text.y = element_text(size = 20),
     axis.title.x = element_text(size = 20, angle = 0, margin = margin(t = 15)),
@@ -4010,11 +4010,11 @@ ggplot(dat_score_29, aes(x = factor(직책, levels = c("학교장", "교감", "�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = job_summary_with_groups_29, 
             aes(x = 직책, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 7, vjust = 0.3) +
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0.3, lineheight=0.5) +
   labs(
     title = "직책별 협력원활성 인식",
     x = "직책", 
-    y = "협력원활성"
+    y = "협력원활성\n인식도"
   ) +
   theme_minimal(base_size = 15) +
   theme(
@@ -4151,11 +4151,11 @@ ggplot(dat_score_29, aes(x = factor(학교급, levels = c("초등학교", "중�
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = school_summary_with_groups_29, 
             aes(x = 학교급, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
-            inherit.aes = FALSE, fontface = "bold", size = 7, vjust = 0.35) +
+            inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0.3, lineheight=0.5) +
   labs(
     title = "학교급별 협력원활성 인식",
     x = "학교급", 
-    y = "협력원활성\n점수"
+    y = "협력원활성\n인식도"
   ) +
   theme_minimal(base_size = 15) +
   theme(
@@ -4486,7 +4486,7 @@ ggplot(summary_q31, aes(x = 문항31, y = n, fill = 문항31)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"),
                 y = n),
-            hjust=0.5, vjust=-0.2, size=7, fontface="bold", lineheight=0.5) +
+            hjust=0.5, vjust=-0.2, size=6, fontface="bold", lineheight=0.5) +
   facet_wrap(~학교급, ncol = 2, nrow = 3) +
   labs(
     title = "교육지원청 도움 여부\n(학교급별)",
@@ -4498,7 +4498,7 @@ ggplot(summary_q31, aes(x = 문항31, y = n, fill = 문항31)) +
   theme(
     plot.title = element_text(face="bold", size=32, hjust=0.5, margin = margin(b = 18), lineheight = 0.5),
     legend.position = "none",
-    axis.text.x = element_text(angle=0, hjust=0.5, size=18, lineheight=0.6),
+    axis.text.x = element_text(angle=0, hjust=0.5, size=18, lineheight=0.5),
     axis.text.y = element_text(size=18),
     axis.title.x = element_text(size=20, margin = margin(t = 18)),
     axis.title.y = element_text(angle = 0, vjust = 0.5, size=20),
@@ -4576,7 +4576,7 @@ ggplot(
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
                 y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 6.5, lineheight = 0.4) +
+            vjust = -0.2, hjust = 0.5, size = 6.5, lineheight = 0.5) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "교육지원청의 도움을 받은 영역",
@@ -4663,7 +4663,7 @@ ggplot(
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
                 y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 7, lineheight = 0.4) +
+            vjust = -0.2, hjust = 0.5, size = 6, lineheight = 0.5) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "컨설팅 받은 분야",
@@ -4725,7 +4725,7 @@ print(ques34_freq %>% select(응답, n, pct), n = Inf)
 ggplot(ques34_freq %>% filter(응답 != "합계"), aes(x = reorder(응답, -n), y = n, fill = 응답)) +
   geom_bar(stat = "identity", width = 0.5) +
   geom_text(aes(label = paste0(n, "명 (", pct, "%)")), 
-            vjust = -0.6, size = 6) +
+            vjust = -0.6, size = 7) +
   labs(
     title = "교육지원청 컨설팅의 도움 정도",
     x = "도움 정도",
@@ -4962,7 +4962,6 @@ print(summary_school_final_34, n = Inf)
 
 # 카이제곱 검정
 tab_school_34 <- table(dat_filtered_34$학교급, dat_filtered_34$컨설팅도움정도)
-print(tab_school_34)
 chisq_test_school_34 <- chisq.test(tab_school_34)
 print(chisq_test_school_34)
 ```
