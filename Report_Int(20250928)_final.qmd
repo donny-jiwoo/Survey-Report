@@ -2408,7 +2408,7 @@ ggplot(summary_q17, aes(x = 문항17, y = n, fill = 문항17)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"),
                 y = n),  # 막대 바로 위에 위치
-            hjust=0.5, vjust=-0.05, size=6, fontface="bold", lineheight=0.5) +  # 줄간격 좁게, vjust로 미세조정
+            hjust=0.5, vjust=-0.1, size=4.5, fontface="bold", lineheight=0.4) +  # 줄간격 좁게, vjust로 미세조정
   facet_wrap(~학교급, ncol = 2, nrow = 3) +  # 3행 2열 배치
   labs(
     title = "학생맞춤통합지원팀\n구성원",
@@ -2760,7 +2760,7 @@ ggplot(
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
                 y = n + max(n) * 0.05),  # 최대값의 5%만큼 위에 위치
-            vjust = -0.025, hjust = 0.5, size = 5, lineheight = 0.4) +
+            vjust = 0, hjust = 0.5, size = 5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "학생맞춤통합지원 제공 영역",
@@ -2852,7 +2852,7 @@ ggplot(
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
                 y = n + max(n) * 0.05),  # 최대값의 5%만큼 위에 위치
-            vjust = -0.05, hjust = 0.5, size = 5, lineheight = 0.4) +
+            vjust = 0.1, hjust = 0.5, size = 5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "학생맞춤통합지원 운영의 어려움",
@@ -2934,7 +2934,7 @@ ggplot(summary_q23, aes(x = 문항23, y = n, fill = 문항23)) +
   geom_bar(stat="identity", width=0.7) +
   geom_text(aes(label = paste0(n,"명\n(",pct,"%)"),
                 y = n),  # 막대 바로 위에 위치
-            hjust=0.5, vjust=-0.2, size=7, fontface="bold", lineheight=0.5) +
+            hjust=0.5, vjust=-0.1, size=6, fontface="bold", lineheight=0.5) +
   facet_wrap(~학교급, ncol = 2, nrow = 3) +  # 3행 2열 배치
   labs(
     title = "학생맞춤통합지원팀\n 지역기관 연계여부",
@@ -3022,7 +3022,7 @@ print(summary_q24_total, n = Inf)
 ggplot(summary_q24 %>% mutate(문항24 = reorder(문항24, -n)), aes(x = 문항24, y = n, fill = 문항24)) +
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 5, lineheight = 0.4) +
+            vjust = 0, hjust = 0.5, size = 5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(title = "연계협력 기관", x = "기관 유형", y = "응답수") +
   scale_x_discrete(labels = c("지역교육\n복지센터", "위(Wee)\n센터", "지역학습\n진단성장\n센터", "구청", "동주민\n센터", "복지관", "청소년\n상담복지\n센터","청소년\n센터","가족센터","기타")) +
@@ -4404,7 +4404,7 @@ ggplot(
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
                 y = n + max(n) * 0.05),
-            vjust = -0.05, hjust = 0.5, size = 6, lineheight = 0.4) +
+            vjust = 0.1, hjust = 0.5, size = 5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "학교구성원 간\n 협력 저해요인",
@@ -5536,9 +5536,9 @@ ggplot(
   aes(x = 문항39, y = n, fill = 문항39)
 ) +
   geom_bar(stat = "identity", width = 0.7) +
-  geom_text(aes(label = paste0(n,"건\n(",pct,"%)"), 
+  geom_text(aes(label = paste0(n,"건(",pct,"%)"), 
                 y = n + max(n) * 0.05),
-            vjust = -0.2, hjust = 0.5, size = 5, lineheight = 0.4) +
+            vjust = 0.1, hjust = 0.5, size = 5, lineheight = 0.4) +
   facet_wrap(~학교급, ncol = 1, scales = "free_y") +
   labs(
     title = "학생성장(사례) 지원을 받은 영역",
@@ -5776,7 +5776,7 @@ ggplot(dat_score_job_40, aes(x = factor(직책, levels = c("학교장", "교감"
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = job_stats_with_groups_40, 
-            aes(x = 직책, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 직책, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0, lineheight=0.5) +
   labs(
     title = "직책별 사례지원\n 유용성 인식",
@@ -5917,7 +5917,7 @@ ggplot(dat_score_job_40, aes(x = factor(학교급, levels = c("초등학교", "�
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = school_stats_with_groups_40, 
-            aes(x = 학교급, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 학교급, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 10, vjust = 0, lineheight =0.5) +
   labs(
     title = "학교급별 사례지원\n 유용성 인식",
@@ -6073,7 +6073,7 @@ ggplot(dat_score_found_40, aes(x = 설립, y = 사례지원도움정도점수, f
   geom_boxplot(alpha = 0.7, width = 0.6, outlier.shape = 21) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 10, fill = "yellow", stroke = 1) +
   geom_text(data = found_stats_with_groups_40, 
-            aes(x = 설립, y = 8, label = paste0(group, "\n(M=", 평균, ")")),
+            aes(x = 설립, y = 9, label = paste0(group, "\n(M=", 평균, ")")),
             inherit.aes = FALSE, fontface = "bold", size = 8, vjust = 0, lineheight =0.5) +
   labs(
     title = "설립별 사례지원\n 유용성 인식",
