@@ -13,14 +13,7 @@ format:
     code-fold: true
     code-summary: "코드 보기"
     smooth-scroll: true
-    css: |
-      .quarto-title-block {
-        text-align: center;
-        margin-bottom: 2em;
-      }
-      .sidebar-navigation {
-        background-color: #f8f9fa;
-      }
+    css: styles.css
 editor: visual
 ---
 
