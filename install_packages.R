@@ -1,6 +1,6 @@
 # install_packages.R : Install only the missing packages used in the report
 pkgs <- c(
-  "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr",
+  "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidyverse",
   "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","purrr",
 )
 inst <- rownames(installed.packages())
