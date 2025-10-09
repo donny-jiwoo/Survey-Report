@@ -53,7 +53,7 @@ library(gt)
 font_add_google("Noto Sans KR", "noto")  # 구글 폰트 
 showtext_auto()  # ggplot, plot에 자동 
 
-raw_data <- read_excel("C:/Users/user/Desktop/raw_data.xlsx")
+raw_data <- read_excel("raw_data.xlsx")
 dat <-raw_data 
 dat <- dat %>% mutate(across(starts_with("ques_"), as.character))
 ```
@@ -6782,6 +6782,7 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
     legend.position = "bottom"
   )
 ```
+
 
 
 
