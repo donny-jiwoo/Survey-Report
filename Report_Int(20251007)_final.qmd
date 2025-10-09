@@ -29,7 +29,7 @@ editor: visual
 #| echo: false
 #| warning: false
 #| message: false
-pkgs <- c( "rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats")
+pkgs <- c( "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats")
 
 
 library(readxl)
@@ -37,7 +37,6 @@ library(scales)
 library(RColorBrewer)
 library(rmarkdown)
 library(dplyr)
-library(tidyverse)
 library(gridExtra)
 library(knitr)        # 기술통계표 보기 좋게 출력
 library(kableExtra)   # 테이블 꾸미기 (선택사항)
@@ -6783,5 +6782,6 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
     legend.position = "bottom"
   )
 ```
+
 
 
