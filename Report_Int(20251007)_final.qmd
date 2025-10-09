@@ -32,6 +32,7 @@ editor: visual
 pkgs <- c( "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats")
 
 
+library(ggplot2)
 library(readxl)
 library(scales)
 library(RColorBrewer)
@@ -6782,6 +6783,7 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
     legend.position = "bottom"
   )
 ```
+
 
 
 
