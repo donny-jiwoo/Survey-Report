@@ -29,10 +29,12 @@ editor: visual
 #| echo: false
 #| warning: false
 #| message: false
-pkgs <- c( "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","purrr")
+pkgs <- c( "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","tidyverse","purrr")
 
 
 library(ggplot2)
+library(tidyverse)
+library(purrr)
 library(readxl)
 library(scales)
 library(RColorBrewer)
@@ -50,7 +52,6 @@ library(tidytext)
 library(DT)
 library(janitor)  # tabyl 함수로 깔끔한 표 만들기
 library(gt)
-library(purrr)
 
 font_add_google("Noto Sans KR", "noto")  # 구글 폰트 
 showtext_auto()  # ggplot, plot에 자동 
@@ -6784,6 +6785,7 @@ ggplot(school_cluster, aes(x = 군집, y = n, fill = 군집)) +
     legend.position = "bottom"
   )
 ```
+
 
 
 
