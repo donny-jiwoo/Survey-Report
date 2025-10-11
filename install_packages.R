@@ -1,8 +1,17 @@
 # install_packages.R : Install only the missing packages used in the report
+
 pkgs <- c(
-  "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidyverse",
-  "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","purrr",
+  "rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr",
+  "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats"
 )
-inst <- rownames(installed.packages())
-to_install <- setdiff(pkgs, inst)
-if(length(to_install)) install.packages(to_install, repos = "https://cloud.r-project.org")
+
+# 설치
+for (pkg in pkgs) {
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages(pkg, repos = "https://cloud.r-project.org", dependencies = TRUE)
+  }
+}
+
+# 검증
+library(tidyverse)
+print(paste("Successfully loaded:", paste((.packages()), collapse = ", ")))
