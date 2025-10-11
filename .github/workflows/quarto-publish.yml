@@ -37,7 +37,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'pkgs <- c("rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","tibble"); inst <- rownames(installed.packages()); to_install <- setdiff(pkgs, inst); if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
+          Rscript -e 'pkgs <- c("rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr","purrr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","tibble"); inst <- rownames(installed.packages()); to_install <- setdiff(pkgs, inst); if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
