@@ -1,5 +1,6 @@
 ---
-title: "학생맞춤통합지원 체계 운영실태 조사 분석보고서"
+title: ""
+title-block: false
 author: "학생맞춤지원담당관 지역협력복지팀(a.k.a. Donny)"
 format: 
   html:
@@ -26,31 +27,34 @@ editor: visual
 -   조사방법: 교육연구정보원 통계분석(유레카) 시스템을 활용하여 데이터를 집계하였으며, R Stutio로 데이터 분석을 실시
 
 ```{r}
+#| label: setup
 #| echo: false
 #| warning: false
 #| message: false
-pkgs <- c("rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats", "purrr")
+pkgs <- c("rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","scales","RColorBrewer","tidyr", "tidytext","cluster","factoextra","gridExtra","kableExtra","DT","gt","showtext","forcats", "purrr")
 
-library(readxl)
-library(ggplot2)
+library(rmarkdown)
+library(knitr)
 library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(janitor)
+library(stringr)
 library(scales)
 library(RColorBrewer)
-library(rmarkdown)
-library(dplyr)
-library(tidyverse)
-library(gridExtra)
-library(knitr)        # 기술통계표 보기 좋게 출력
-library(kableExtra)   # 테이블 꾸미기 (선택사항)
-library(readxl)
-library(forcats)  
-library(showtext)
 library(tidyr)
-library(stringr)
-library(tidytext) 
+library(tidytext)
+library(cluster)
+library(factoextra)
+library(gridExtra)    
+library(kableExtra)   
 library(DT)
-library(janitor)  # tabyl 함수로 깔끔한 표 만들기
-library(gt) 
+library(gt)
+library(showtext)
+library(forcats)  
+library(purrr)
+
 
 font_add_google("Noto Sans KR", "noto")  # 구글 폰트 
 showtext_auto()  # ggplot, plot에 자동 
