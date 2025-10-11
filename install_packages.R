@@ -1,8 +1,8 @@
 # install_packages.R : Install only the missing packages used in the report
 
 pkgs <- c(
-  "rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","tidyr",
-  "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats"
+  "rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr", "purrr",
+  "tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","tibble",
 )
 
 # 설치
