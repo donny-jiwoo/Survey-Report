@@ -31,11 +31,10 @@ editor: visual
 #| echo: false
 #| warning: false
 #| message: false
-pkgs <- c("rmarkdown","knitr","tidyverse","dplyr","ggplot2","readxl","janitor","stringr","scales","RColorBrewer","tidyr", "tidytext","cluster","factoextra","gridExtra","kableExtra","DT","gt","showtext","forcats", "purrr")
 
 library(rmarkdown)
 library(knitr)
-library(tidyverse)
+library(tibble)
 library(dplyr)
 library(ggplot2)
 library(readxl)
