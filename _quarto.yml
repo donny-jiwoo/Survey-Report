@@ -7,14 +7,14 @@ book:
   author: "학생맞춤지원담당관 지역협력복지팀(a.k.a. Donny)"
   chapters:
     - index.qmd
-    - Report_Int(20250928)_final.qmd 
 
 format:
   html:
-    theme: cosmo
-    toc: false
-    number-sections: true
-    code-fold: show
+    theme: flatly
+    toc: true
+    toc-location: left
+    number-sections: false
+    code-fold: true
     css: styles.css
 
 execute:
