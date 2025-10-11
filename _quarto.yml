@@ -16,6 +16,3 @@ format:
     number-sections: false
     code-fold: true
     css: styles.css
-
-execute:
-  freeze: auto
