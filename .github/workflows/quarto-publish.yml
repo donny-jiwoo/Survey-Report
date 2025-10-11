@@ -35,14 +35,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
 
-      - name: Install tidyverse from binary
-        run: |
-          Rscript -e "install.packages('tidyverse', repos = 'https://cloud.r-project.org', dependencies = TRUE)"
-          Rscript -e "library(tidyverse); cat('✓ tidyverse loaded successfully\n')"
-
       - name: Install R packages
         run: |
-          Rscript -e 'pkgs <- c("rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats"); inst <- rownames(installed.packages()); to_install <- setdiff(pkgs, inst); if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
+          Rscript -e 'pkgs <- c("rmarkdown","knitr","dplyr","ggplot2","readxl","janitor","stringr","tidyr","tidytext","cluster","factoextra","gridExtra","RColorBrewer","scales","kableExtra","DT","gt","showtext","forcats","tibble"); inst <- rownames(installed.packages()); to_install <- setdiff(pkgs, inst); if(length(to_install)) install.packages(to_install, repos="https://cloud.r-project.org")'
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
