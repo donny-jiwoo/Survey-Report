@@ -1,2 +1,5 @@
-{{< include "Report_Int(20250928)_final.qmd" >}}
+---
+title-block: false
+---
 
+{{< include "Report_Int(20250928)_final.qmd" >}}
